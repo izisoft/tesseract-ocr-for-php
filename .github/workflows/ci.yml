@@ -104,6 +104,9 @@ jobs:
         args: install capture2text --version=3.9
       if: ${{ matrix.operating-system == 'windows-latest' }}
 
+    - run: refreshenv
+      if: ${{ matrix.operating-system == 'windows-latest' }}
+
     - name: Install codecov (windows)
       run: dotnet tool install --global Codecov.Tool
       if: ${{ matrix.operating-system == 'windows-latest' }}
