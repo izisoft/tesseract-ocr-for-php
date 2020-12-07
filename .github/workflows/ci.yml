@@ -78,7 +78,7 @@ jobs:
         - windows-latest
 
     name: code-coverage on ${{ matrix.operating-system }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.operating-system }}
 
     steps:
     - name: Checkout code
