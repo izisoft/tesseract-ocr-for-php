@@ -98,8 +98,12 @@ jobs:
         tesseract-ocr tesseract-ocr-deu tesseract-ocr-jpn tesseract-ocr-spa
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
 
-    - name: Install system dependencies (windows)
-      run: choco install capture2text --version 3.9 codecov -y
+    - name: Install tesseract (windows)
+      run: choco install capture2text --version 3.9
+      if: ${{ matrix.operating-system == 'windows-latest' }}
+
+    - name: Install codecov (windows)
+      run: dotnet tool install --global Codecov.Tool
       if: ${{ matrix.operating-system == 'windows-latest' }}
 
     - name: Install composer dependencies
@@ -113,5 +117,5 @@ jobs:
       if: ${{ matrix.operating-system != 'windows-latest' }}
 
     - name: Report code coverage (powershell)
-      run: codecov.exe -f ./coverage.xml
+      run: codecov -f ./coverage.xml
       if: ${{ matrix.operating-system == 'windows-latest' }}
