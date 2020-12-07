@@ -114,6 +114,10 @@ jobs:
     - name: Install composer dependencies
       run: composer update --no-ansi --no-interaction --no-progress
 
+    - name: debug
+      run: echo $TESSDATA_PREFIX
+      if: ${{ matrix.operating-system == 'windows-latest' }}
+
     - name: Run unit + e2e tests
       run: php tests/run.php unit e2e
 
