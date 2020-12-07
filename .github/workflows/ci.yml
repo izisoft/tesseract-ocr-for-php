@@ -99,7 +99,7 @@ jobs:
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
 
     - name: Install system dependencies (windows)
-      run: choco install codecov capture2text --version 3.9
+      run: choco install capture2text --version 3.9 codecov -y
       if: ${{ matrix.operating-system == 'windows-latest' }}
 
     - name: Install composer dependencies
