@@ -111,7 +111,7 @@ jobs:
 
     - name: Run unit + e2e tests
       run: >
-        TESSDATA_PREFIX=C:\ProgramData\chocolatey\lib\capture2text\Capture2Text\Utils\tesseract\tessdata
+        TESSDATA_PREFIX=C:\ProgramData\chocolatey\lib\capture2text\Capture2Text\Utils\tesseract
         php tests/run.php unit e2e
 
     - name: Report code coverage (bash)
