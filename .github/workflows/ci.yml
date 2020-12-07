@@ -99,7 +99,7 @@ jobs:
       if: ${{ matrix.operating-system == 'ubuntu-latest' }}
 
     - name: Install tesseract (windows)
-      run: choco install capture2text --version 3.9
+      run: choco install capture2text --version=3.9
       if: ${{ matrix.operating-system == 'windows-latest' }}
 
     - name: Install codecov (windows)
@@ -110,7 +110,9 @@ jobs:
       run: composer update --no-ansi --no-interaction --no-progress
 
     - name: Run unit + e2e tests
-      run: php tests/run.php unit e2e
+      run: >
+        TESSDATA_PREFIX=C:\ProgramData\chocolatey\lib\capture2text\Capture2Text\Utils\tesseract\tessdata
+        php tests/run.php unit e2e
 
     - name: Report code coverage (bash)
       run: bash <(curl -s https://codecov.io/bash)
