@@ -7,8 +7,8 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "thiagoalessio",
-			"email": "thiagoalessio@me.com"
+			"name": "izisoft",
+			"email": "vantruong1898@gmail.com"
 		}
 	],
 	"support": {
@@ -24,12 +24,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"thiagoalessio\\TesseractOCR\\": "src/"
+			"izi\\TesseractOCR\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"thiagoalessio\\TesseractOCR\\Tests\\": "tests/"
+			"izi\\TesseractOCR\\Tests\\": "tests/"
 		}
 	}
 }
